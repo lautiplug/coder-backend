@@ -7,31 +7,44 @@ class ProductManager {
     return this.products;
   }
 
-  addProduct(title, desc, price, url, stock, id) {
-    const product = {
-      id: this.#getProductById() + 1,
-      title,
-      desc,
-      price,
-      url,
-      stock,
+  addProduct(title, desc, price, url, stock, code) {
+    if(!title || !desc || !price || !url || !stock || !code) {
+      console.error('Todos los campos son obligatorios.');
+      return;
     }
-    this.products.push(product)
+    if(this.products.some((item) => item.code === code)) {
+      console.error('Ya existe un producto con ese Codigo, deberías cambiarlo.')
+    } else {
+      const product = {
+        code,
+        title,
+        desc,
+        price,
+        url,
+        stock,
+      }
+      this.products.push(product)
+    }
   }
 
-  #getProductById() {
-    let prId = 0
-    this.products.map((event) => {
-      if (event.id > prId) prId = event.id
-      else {
-        console.log('Not Found!')
-      }
-    });
-    return prId;
+  getProductById(code) {
+    const product = this.products.find(product => product.code === code);
+    if (!product) {
+      console.error('Not found');
+      return;
+    }
+    return product.code;
   }
 }
 
 const productManager = new ProductManager();
-productManager.addProduct('samsung s23 Ultra', 'Nuevo, en caja sellada', 1299, 'www.img.com', 20)
-productManager.addProduct('iPhone 14 Pro Max', 'Nuevo, en caja sellada', 1099, 'www.img.com', 12)
+// titulo, desc, precio, url, stock, id
+productManager.addProduct('samsung s23 Ultra', 'Nuevo, en caja sellada', 1299, 'www.img.com', 40, 1)
+productManager.addProduct('iPhone 14 Pro Max', 'Nuevo, en caja sellada', 1099, 'www.img.com', 12, 2)
+productManager.addProduct('nike air force 1', 'Nuevo, en caja sellada', 1499, 'www.img2.com', 40, 1)
 console.log(productManager.getProducts())
+
+productManager.getProductById(1);
+console.log(productManager.getProductById(1)); // muestra el primer producto agregado
+productManager.getProductById(2);
+console.log(productManager.getProductById(2)); // muestra el segundo producto agregado
