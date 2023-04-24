@@ -134,7 +134,7 @@ class ProductManager {
   }
 }
 
-// Se crea la instancia de GestionadorDeProductos
+// Se crea la instancia de productManager
 const productManager = new ProductManager();
 
 // Se obtienen los productos devuelve un Array vacío
@@ -142,7 +142,7 @@ const test = async () => {
 
   const obtener1 = await productManager.getProducts();
   console.log("Consulta inicial: ", obtener1);
-  // Se agrega un producto (si tiene el mismo Code arroja error y no se agrega al file)
+  // Se agrega un producto (si tiene el mismo Code muestra error y no se agrega al file)
   await productManager.addProduct(
     "iphone 14",
     "producto nuevo caja sellada",
