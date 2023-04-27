@@ -1,17 +1,26 @@
-const fs = require('fs');
+import fs from 'fs';
 
-class ProductManager {
+export default class ProductManager {
   constructor() {
-    this.idContador = 0;
-    this.path = "./products.json";
+    this.path = "./data/products.json";
+    this.idContador = 1;
+    this.getProducts().then(productos => {
+      if (productos.length > 0) {
+        this.idContador = productos[productos.length - 1].id + 1;
+      }
+    }).catch(error => console.log(error));
   }
 
-  async getProducts() {
+  async getProducts(limit) {
     try {
       if (fs.existsSync(this.path)) {
         const productos = await fs.promises.readFile(this.path, 'utf8');
         const productosJS = JSON.parse(productos);
-        return productosJS;
+        if (limit) {
+          return productosJS.slice(0, limit);
+        } else {
+          return productosJS;
+        }
       } else {
         return [];
       }
@@ -31,7 +40,7 @@ class ProductManager {
         console.log(`Ya existe un producto con el código ${code}`);
       } else {
         const ultimoProducto = productosArchivo[productosArchivo.length - 1];
-        const nuevoId = ultimoProducto === ultimoProducto.id + 1;
+        const nuevoId = ultimoProducto ? ultimoProducto.id + 1 : this.idContador;
         const producto = {
           id: nuevoId,
           nombre: title,
@@ -121,16 +130,15 @@ class ProductManager {
   }
 
   async getProductById(idProducto) {
-    try {
-      const producto = this.#existingProduct(idProducto);
-      if (!producto) {
-        console.log('Not found');
-      } else {
-        return producto;
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    return this.#existingProduct(idProducto)
+      .then(producto => {
+        if (!producto) {
+          console.log('Producto no encontrado');
+        } else {
+          return producto;
+        }
+      })
+      .catch(error => console.log(error));
   }
 }
 
@@ -175,5 +183,3 @@ const test = async () => {
   const obtener5 = await productManager.getProducts();
   console.log("Tercer Consulta: ", obtener5);
 };
-
-test();
