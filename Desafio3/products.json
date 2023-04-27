@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "nombre": "iphone 7",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 199,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "sLSz8V8v",
+    "stock": 25
+  },
+  {
+    "id": 2,
+    "nombre": "iphone 8",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 199,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "Ki4zjhV9Z",
+    "stock": 25
+  },
+  {
+    "id": 3,
+    "nombre": "iphone XR",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 3000,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "Do9H8Da8",
+    "stock": 30
+  },
+  {
+    "id": 4,
+    "nombre": "iphone X",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 349,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "kA2wRWwF",
+    "stock": 25
+  },
+  {
+    "id": 5,
+    "nombre": "iphone 11",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 499,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "0ZI9eayK",
+    "stock": 25
+  },
+  {
+    "id": 6,
+    "nombre": "iphone 12",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 599,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "MGuX5ReV",
+    "stock": 25
+  },
+  {
+    "id": 7,
+    "nombre": "iphone 13",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 699,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "W1B7tnXN",
+    "stock": 25
+  },
+  {
+    "id": 8,
+    "nombre": "iphone 14",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 799,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "qtYJYgbg",
+    "stock": 25
+  },
+  {
+    "id": 9,
+    "nombre": "Samsung Galaxy s23 Ultra",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 1199,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "PAu7rfC0",
+    "stock": 25
+  },
+  {
+    "id": 10,
+    "nombre": "Samsung Galaxy s23",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 899,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "TgPC2YkQ",
+    "stock": 25
+  },
+  {
+    "id": 11,
+    "nombre": "iphone 14",
+    "descripcion": "producto nuevo caja sellada",
+    "precio": 1100,
+    "imagen": "www.iphoneimg.com",
+    "codigo": "gettingstuff0123",
+    "stock": 25
+  }
+]
