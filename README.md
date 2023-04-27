@@ -1,3 +1,3 @@
 # coder-backend
 
-Download and open my project and write "node ProductManager.js" in your console to see the content!
+Para acceder a los desafios correspondientes puede ingresar a la carpeta y descargarla, en el mismo encontrará instrucciones de como ejecutar y ver los resultados.
